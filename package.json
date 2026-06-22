@@ -1,0 +1,32 @@
+{
+  "name": "pointer-game",
+  "version": "1.0.0",
+  "description": "A TypeScript browser application built with Phaser.  \r The app displays a 1000×600 game area with a background and a looping animated sprite.  \r The sprite smoothly moves to the clicked or touched position using a nonlinear trajectory.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "webpack serve --open",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.49.0",
+    "phaser": "^3.55.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "babel-loader": "^10.1.1",
+    "html-webpack-plugin": "^5.6.7",
+    "typescript": "^6.0.3",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3",
+    "webpack-dev-server": "^5.2.5"
+  }
+}
