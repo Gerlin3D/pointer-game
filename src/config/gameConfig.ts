@@ -16,8 +16,8 @@ export const GAME_CONFIG = {
       speed: 0.5,
       minDuration: 200,
       maxDuration: 1200,
-      edgePaddingHeight: 70,
-      edgePaddingWidth: 20,
+      edgePaddingHeight: 30,
+      edgePaddingWidth: 0,
       curveBend: 0.3,
     }
 } as const
