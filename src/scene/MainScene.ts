@@ -3,6 +3,7 @@ import { GAME_CONFIG } from '../config/gameConfig';
 import { AnimatedActor } from '../actors/AnimatedActor';
 import { MovementController } from '../controllers/MovementController';
 import { InputController } from '../controllers/InputController';
+import { BoundsService } from '../services/BoundsService';
 
 export class MainScene extends Phaser.Scene {
   constructor() {
@@ -14,7 +15,8 @@ export class MainScene extends Phaser.Scene {
   create() {
     this.add.image(GAME_CONFIG.width / 2, GAME_CONFIG.height / 2, 'background');
     const actor = new AnimatedActor(this, GAME_CONFIG.width / 2, GAME_CONFIG.height / 2);
-    const movement = new MovementController(this, actor.gameObject);
+    const bounds = new BoundsService(GAME_CONFIG.width, GAME_CONFIG.height);
+    const movement = new MovementController(this, actor.gameObject, bounds);
     new InputController(this, (x, y) => movement.moveTo(x, y));
   }
 }
