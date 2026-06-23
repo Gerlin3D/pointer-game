@@ -15,14 +15,17 @@ module.exports = {
     rules: [{
       test: /\.ts$/,
       use: 'babel-loader',
-      exclude: /node_modules/, 
+      exclude: /node_modules/,
     }],
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' })
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),     // откуда раздавать статику
-    port: 3000,       // порт
-  },
-};
+    static: [
+      path.resolve(__dirname, 'dist'),
+      path.resolve(__dirname, 'public'),
+    ],
+    port: 3000,
+  }
+}
