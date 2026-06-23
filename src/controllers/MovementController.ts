@@ -8,6 +8,7 @@ export class MovementController {
   private target: Phaser.GameObjects.Sprite;
   private bounds: BoundsService;
   private trajectory: TrajectoryFactory
+  private currentTween?: Phaser.Tweens.Tween;
 
 
   constructor(scene: Phaser.Scene, target: Phaser.GameObjects.Sprite, bounds: BoundsService, trajectory: TrajectoryFactory) {
@@ -35,10 +36,14 @@ export class MovementController {
       GAME_CONFIG.movement.maxDuration
     );
 
+    if (this.currentTween) {
+      this.currentTween.stop();
+    }
+
     const curve = this.trajectory.create(this.target.x, this.target.y, target.x, target.y);
     const follower = { t: 0 };
 
-    this.scene.tweens.add({
+    this.currentTween = this.scene.tweens.add({
       targets: follower,
       t: 1,
       onUpdate: () => {
