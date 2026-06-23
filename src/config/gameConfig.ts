@@ -4,12 +4,17 @@ export const GAME_CONFIG = {
     height: 600,
     assets: {
       background: 'assets/images/Magic_Field.webp',
-      sprite: 'assets/sprites/fog-idle-spritesheet.png',
+      sprite: 'assets/sprites/forest-fog-spritesheet.png',
     },
     animation: {
       frameWidth: 400,
       frameHeight: 400,
       frameCount: 8,
-      fps: 10,
+      fps: 6,
+    },
+    movement: {
+      speed: 0.5,
+      minDuration: 200,
+      maxDuration: 1200,
     }
 } as const
